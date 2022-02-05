@@ -24,11 +24,31 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
 type District struct {
 	number int
 	name   string
 }
 
-func DistrictName(num int) string {
-	return "足立区"
+// func DistrictName(num int) string {
+// 	districts := []District{{1, "足立区"}, {12, "杉並区"}}
+// 	return "足立区"
+// }
+
+func random() District {
+	districts := []District{{1, "足立区"}, {12, "杉並区"}}
+	rand.Seed(time.Now().UnixNano())
+	i := rand.Intn(len(districts))
+
+	return districts[i]
+}
+
+func main() {
+	district := random()
+	fmt.Println(district)
 }
