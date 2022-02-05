@@ -24,6 +24,11 @@
 
 package main
 
+type District struct {
+	number int
+	name   string
+}
+
 func DistrictName(num int) string {
 	return "足立区"
 }
